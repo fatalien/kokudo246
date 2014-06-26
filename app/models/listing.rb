@@ -1,7 +1,5 @@
 class Listing < ActiveRecord::Base
-	if Rails.env.development?
-	 has_attached_file :image, :styles => { :medium => "400x", :thumb => "200x" }, :default_url => "/images/:style/missing.png"
-	else
+
  	 has_attached_file :image, :styles => { :medium => "400x", :thumb => "200x" }, :default_url => "/images/:style/missing.png",
 	 				   :storage => :dropbox,
 					   :dropbox_credentials => Rails.root.join("config/dropbox.yml"),
