@@ -22,7 +22,7 @@
         <%= image_tag order.listing.image.url(:thumb) %>
       </td>
       <td><%= order.listing.name %></td>
-      <td><%= number_to_currency(order.listing.price) %></td>
+      <td><%= number_to_currency(order.listing.price, :unit => "RM") %></td>
       <td><%= order.name %></td>
       <td><%= order.created_at.strftime("%B %-d, %Y") %></td>
     </tr>
