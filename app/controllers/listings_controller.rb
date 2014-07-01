@@ -21,10 +21,12 @@ class ListingsController < ApplicationController
   # GET /listings/new
   def new
     @listing = Listing.new
+    @categories = Category.all
   end
 
   # GET /listings/1/edit
   def edit
+    @categories = Category.all
   end
 
   # POST /listings
@@ -76,7 +78,7 @@ class ListingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def listing_params
-      params.require(:listing).permit(:name, :description, :price, :image)
+      params.require(:listing).permit(:name, :description, :price, :image, :category_id)
     end
 
     def check_user

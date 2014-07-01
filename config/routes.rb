@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   
+  get 'pages/loan'
+
+  get 'pages/payment'
+
   resources :categories
 
   devise_for :users

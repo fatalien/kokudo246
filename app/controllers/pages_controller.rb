@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
-  def about
+  def loan
   end
 
-  def contact
+  def payment
   end
 end

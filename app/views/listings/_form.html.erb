@@ -25,6 +25,14 @@
     <%= f.label :price %><br>
     <%= f.text_field :price, class: "form-control" %>
   </div>
+
+
+   <div class="form-group">
+    <%= f.label :category_id%><br>
+    <%= f.collection_select :category_id, @categories, :id, :name %>
+  </div>
+
+  
   <div class="form-group">
     <%= f.label :image %><br>
     <%= f.file_field :image, class: "form-control" %>
