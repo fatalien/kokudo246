@@ -1,17 +1,21 @@
 
 <!-- Nav tabs -->
 <ul class="nav nav-tabs" role="tablist">
-  <li class="active"><a href="#payment" role="tab" data-toggle="tab">Payment</a></li>
   <li><a href="#loan" role="tab" data-toggle="tab">Loan</a></li>
+  <li class="active"><a href="#payment" role="tab" data-toggle="tab">Payment</a></li>
   <li><a href="#shipping" role="tab" data-toggle="tab">Shipping</a></li>
 </ul>
 
 
 <!-- Tab panes -->
 <div class="tab-content">
-	<div class="tab-pane active" id="payment">
-		adsfsdfsd asdfsdfasdfas
+	<div class="tab-pane" id="loan">
+		<%= render 'loan' %>
 	</div>
-    <div class="tab-pane" id="loan">...</div>
-    <div class="tab-pane" id="shipping">...</div>
+	<div class="tab-pane active" id="payment">
+		<%= render 'payment' %>
+	</div>
+    <div class="tab-pane" id="shipping">
+    	<%= render 'shipping' %>
+    </div>
 </div>
