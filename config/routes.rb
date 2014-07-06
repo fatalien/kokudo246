@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   
+  get 'store/index'
+
+  get 'pages/shop'
+
   get 'pages/loan'
 
   get 'pages/payment'

@@ -1,6 +1,8 @@
-<% if user_signed_in? %>
-  <%= link_to 'New Listing', new_listing_path %>
-<% end %>
+<div class="col-md-12">
+  <% if user_signed_in? %>
+    <%= link_to 'New Listing', new_listing_path, class: "btn btn-success" %>
+  <% end %>
+</div> 
 <br>
 
 <table class="table table-bordered">

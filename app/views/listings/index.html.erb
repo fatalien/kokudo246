@@ -1,6 +1,13 @@
 <div class ="jumbotron">
   <h1> My road my style </h1>
 </div>
+
+<div class="col-md-12">
+  <% if user_signed_in? %>
+    <%= link_to 'New Listing', new_listing_path, class: "btn btn-success" %>
+  <% end %>
+</div>  
+<br>
 <div class="center">
   <div class="row">
     <% @listings.each do |listing| %>
@@ -20,6 +27,3 @@
 
 <br>
 
-<% if user_signed_in? %>
-  <%= link_to 'New Listing', new_listing_path %>
-<% end %>
