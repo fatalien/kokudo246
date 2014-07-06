@@ -1,5 +1,6 @@
 <% @categories.each do |category| %>
-	<h3><%= category.name %></h3>
-	  <%category.listings.each do |product%>
-      	<%= render 'listing', :listing => listing%>
+    <p>
+        <b>Product:</b>
+        <%= listing.name %>
+    </p>
 <% end %>
