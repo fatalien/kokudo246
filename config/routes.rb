@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  resources :genres
+
   get 'store/index'
 
   get 'pages/shop'
