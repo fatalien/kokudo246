@@ -1,13 +1,12 @@
 Rails.application.routes.draw do
   
+  resources :posts
+
   resources :genres
 
   get 'store/index'
-
   get 'pages/shop'
-
   get 'pages/loan'
-
   get 'pages/payment'
 
   resources :categories
