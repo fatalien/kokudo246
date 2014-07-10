@@ -11,6 +11,11 @@ Rails.application.routes.draw do
   get 'pages/payment'
 
   resources :categories
+  get 'categories/1'
+  get 'categories/2'
+  get 'categories/3'
+
+
 
   devise_for :users
   resources :listings do
