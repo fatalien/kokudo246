@@ -1,6 +1,7 @@
 class ListingsController < ApplicationController
   before_action :set_listing, only: [:show, :edit, :update, :destroy]
-  before_filter :authenticate_user!, only: [:seller, :new, :create, :update, :edit, :destroy]
+  before_filter :verify_is_admin, except: [:show, :index]
+  #before_filter :authenticate_user!, only: [:seller, :new, :create, :update, :edit, :destroy]
   before_filter :check_user, only: [:edit, :update, :destroy]
 
   def seller
@@ -73,6 +74,12 @@ class ListingsController < ApplicationController
   end
 
   private
+  #  def authenticate
+  #    authenticate_user! && current_user.try(:admin?)
+  #  end
+    def verify_is_admin
+      (current_user.nil?) ? redirect_to(root_path) : (redirect_to(root_path) unless current_user.admin?)
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_listing
       @listing = Listing.find(params[:id])

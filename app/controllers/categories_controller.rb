@@ -1,5 +1,7 @@
 class CategoriesController < ApplicationController
   before_action :set_category, only: [:show, :edit, :update, :destroy]
+  before_filter :verify_is_admin, except: [:show, :index]
+
 
   # GET /categories
   # GET /categories.json
@@ -62,6 +64,11 @@ class CategoriesController < ApplicationController
   end
 
   private
+
+    def verify_is_admin
+      (current_user.nil?) ? redirect_to(root_path) : (redirect_to(root_path) unless current_user.admin?)
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_category
       @category = Category.find(params[:id])

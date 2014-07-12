@@ -7,8 +7,11 @@ class ApplicationController < ActionController::Base
    
   protected
 
+  # below parameter use to fix problem in devise if can't use blank is available
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) << :name
     devise_parameter_sanitizer.for(:account_update) << :name
+    devise_parameter_sanitizer.for(:sign_up) << :username
+    devise_parameter_sanitizer.for(:account_update) << :username   
   end
 end

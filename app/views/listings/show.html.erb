@@ -20,7 +20,7 @@
 <div class="col-md-12">
 	<%= render_shareable :url=> 'http://github.com/hermango/', :facebook=> {:send=> 'true', :url=> 'http://demo.dev'} %>
 
-	<% if current_user == @listing.user %>
+	<% if current_user.admin? %>
 		<%= link_to 'Edit', edit_listing_path(@listing), class: "btn btn-link" %> 
 	<% end %>
 	<%= link_to 'Back', listings_path, class: "btn btn-link" %>

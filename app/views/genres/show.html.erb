@@ -4,6 +4,7 @@
   <strong>Name:</strong>
   <%= @genre.name %>
 </p>
-
+<% if current_user.admin? %>
 <%= link_to 'Edit', edit_genre_path(@genre) %> |
 <%= link_to 'Back', genres_path %>
+<% end %>

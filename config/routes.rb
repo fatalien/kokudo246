@@ -14,9 +14,9 @@ Rails.application.routes.draw do
   get 'categories/2'
   get 'categories/3'
 
-
-
   devise_for :users
+
+
   resources :listings do
     resources :orders, only: [:new, :create]
   end  

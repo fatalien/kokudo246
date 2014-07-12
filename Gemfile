@@ -12,6 +12,7 @@ gem 'paperclip', github: 'thoughtbot/paperclip'
 gem "paperclip-dropbox", ">= 1.1.7"
 gem "figaro"
 gem "devise"
+gem 'cancan'
 gem 'shareable'
 
 group :production do
