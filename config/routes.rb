@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  resources :makers
+
   resources :posts
 
   resources :genres

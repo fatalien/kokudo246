@@ -15,10 +15,8 @@
       <div class="col-md-3">
         <div class="thumbnail">
           <%= link_to image_tag(post.image.url), post %>
-          <div class="caption">
             <h3><%= post.title %></h3>
             <p><%= post.user.username %></p>
-          </div>
         </div>
       </div>
     <% end %>

@@ -1,14 +1,7 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Back', posts_path %>
 
-<div class="row">
-	<div class="col-md-6">
-		<div class="thumbnail">
-			<%= image_tag @post.image.url %>
-		</div>
-	</div>
-</div>
+<div class = 'center'>
 <div class="col-md-12">
 	<%= render_shareable :url=> 'http://github.com/hermango/', :facebook=> {:send=> 'true', :url=> 'http://demo.dev'} %>
 
@@ -18,3 +11,26 @@
 	<% end %>
 
 </div>
+</div>
+<div class="row">
+	<div class="panel-heading center">
+	<div class ="col-md-offset-2 col-md-8 ">
+		<div class="thumbnail">
+			<%= image_tag @post.image.url %>	
+			 <div class="panel-body">
+			 	<p><strong><%= @post.title %></strong></p>
+			 	<p><strong><%= @post.description %></strong></p>
+			 	<p><%= @post.user.username %></p>
+			 </div>
+		</div>
+	</div>
+	</div>
+</div>
+
+<div class = 'center'>
+<%= link_to 'Back', posts_path, class: "btn btn-warning" %>
+</div>
+<br>
+<br>
+<br>
+<br>

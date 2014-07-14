@@ -24,12 +24,14 @@ class ListingsController < ApplicationController
     @listing = Listing.new
     @categories = Category.all
     @genres = Genre.all
+    @makers = Maker.all
   end
 
   # GET /listings/1/edit
   def edit
     @categories = Category.all
     @genres = Genre.all
+    @makers = Maker.all
   end
 
   # POST /listings
@@ -87,7 +89,7 @@ class ListingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def listing_params
-      params.require(:listing).permit(:name, :description, :price, :image, :category_id, :genre_id)
+      params.require(:listing).permit(:name, :description, :price, :image, :category_id, :genre_id, :maker_id)
     end
 
     def check_user
