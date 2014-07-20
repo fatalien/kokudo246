@@ -12,42 +12,46 @@
       </ul>
     </div>
   <% end %>
+<div class="col-md-8">
+    <div class="thumbnail">
+      <div class="form-group">
+        <%= f.label :name %><br>
+        <%= f.text_field :name, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :description %><br>
+        <%= f.text_area :description, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :price %><br>
+        <%= f.text_field :price, class: "form-control" %>
+      </div>
 
-  <div class="form-group">
-    <%= f.label :name %><br>
-    <%= f.text_field :name, class: "form-control" %>
-  </div>
-  <div class="form-group">
-    <%= f.label :description %><br>
-    <%= f.text_area :description, class: "form-control" %>
-  </div>
-  <div class="form-group">
-    <%= f.label :price %><br>
-    <%= f.text_field :price, class: "form-control" %>
-  </div>
+       <div class="form-group">
+        <%= f.label :maker_id%><br>
+        <%= f.collection_select :maker_id, @makers, :id, :name %>
+      </div>
 
-   <div class="form-group">
-    <%= f.label :maker_id%><br>
-    <%= f.collection_select :maker_id, @makers, :id, :name %>
-  </div>
+       <div class="form-group">
+        <%= f.label :category_id%><br>
+        <%= f.collection_select :category_id, @categories, :id, :name %>
+      </div>
 
-   <div class="form-group">
-    <%= f.label :category_id%><br>
-    <%= f.collection_select :category_id, @categories, :id, :name %>
-  </div>
+       <div class="form-group">
+        <%= f.label :genre_id%><br>
+        <%= f.collection_select :genre_id, @genres, :id, :name %>
+      </div>
 
-   <div class="form-group">
-    <%= f.label :genre_id%><br>
-    <%= f.collection_select :genre_id, @genres, :id, :name %>
+      <div class="form-group">
+        <%= f.label :image %><br>
+        <%= f.file_field :image, class: "form-control" %>
+      </div>
+    </div>
+  </div> 
+  <div class="col-md-12">
+      <div class="form-group">
+        <%= f.submit class: "btn btn-primary" %>
+      </div>
   </div>
-
-
-
-  <div class="form-group">
-    <%= f.label :image %><br>
-    <%= f.file_field :image, class: "form-control" %>
-  </div>
-  <div class="form-group">
-    <%= f.submit class: "btn btn-primary" %>
-  </div>
+   
 <% end %>

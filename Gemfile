@@ -14,6 +14,7 @@ gem "figaro"
 gem "devise"
 gem 'cancan'
 gem 'shareable'
+gem 'event-calendar', :require => 'event_calendar'
 
 group :production do
      gem 'pg'

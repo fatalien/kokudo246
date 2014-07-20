@@ -63,6 +63,7 @@ GEM
     dropbox-sdk (1.6.4)
       json
     erubis (2.7.0)
+    event-calendar (2.3.3)
     execjs (2.2.0)
     figaro (0.7.0)
       bundler (~> 1.0)
@@ -160,6 +161,7 @@ DEPENDENCIES
   cancan
   coffee-rails (~> 4.0.0)
   devise
+  event-calendar
   figaro
   jbuilder (~> 2.0)
   jquery-rails
