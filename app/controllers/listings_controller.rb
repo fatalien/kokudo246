@@ -5,13 +5,14 @@ class ListingsController < ApplicationController
   before_filter :check_user, only: [:edit, :update, :destroy]
 
   def seller
-    @listings = Listing.where(user: current_user).order("created_at DESC")
+    @listings = Listing.where(user: current_user).order("created_at DESC").paginate(:page => params[:page], :per_page => 20)
   end
 
   # GET /listings
   # GET /listings.json
   def index
-    @listings = Listing.all.order("created_at DESC")
+    @listings = Listing.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 8)
+
   end
 
   # GET /listings/1
