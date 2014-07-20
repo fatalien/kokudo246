@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  resources :profiles
+
   resources :events
 
   resources :makers
