@@ -1,0 +1,21 @@
+
+
+<div class="col-md-12">
+  <% if user_signed_in? %>
+    <%= link_to 'New Art', new_post_path, class: "btn btn-success" %>
+  <% end %>
+</div> 
+
+<div class="center">
+  <div class="row">
+    <% @posts.each do |post| %>
+      <div class="col-md-3">
+        <div class="thumbnail">
+          <%= link_to image_tag(post.image.url), post %>
+            <h3><%= post.title %></h3>
+            <p><%= post.user.username %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

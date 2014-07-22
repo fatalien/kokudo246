@@ -1,14 +1,17 @@
 Rails.application.routes.draw do
   
-  resources :profiles
-
   resources :events
 
   resources :makers
 
-  resources :posts
-
   resources :genres
+
+  resources :posts 
+  get 'profile' => "posts#profile"
+
+
+  resources :profiles
+  
 
   get 'store/index'
   get 'pages/shop'
@@ -21,6 +24,7 @@ Rails.application.routes.draw do
   get 'categories/3'
 
   devise_for :users
+
 
 
   resources :listings do
