@@ -1,5 +1,5 @@
-class Post < ActiveRecord::Base
-	if Rails.env.development?
+class Autoart < ActiveRecord::Base
+		if Rails.env.development?
 	 has_attached_file :image, :styles => { :medium => "200x", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
 	else
  	 has_attached_file :image, :styles => { :medium => "200x", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png",
@@ -11,9 +11,7 @@ class Post < ActiveRecord::Base
 
 	validates_attachment_presence :image
 	validates_attachment_content_type :image, :content_type => %w(image/jpeg image/jpg image/png)
-	validates :title, :description, presence: true
+	validates :title, :description, :username, presence: true
 
 	belongs_to :user
-
-
 end

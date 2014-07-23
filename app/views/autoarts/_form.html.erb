@@ -1,0 +1,33 @@
+<%= form_for(@autoart) do |f| %>
+  <% if @autoart.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@autoart.errors.count, "error") %> prohibited this autoart from being saved:</h2>
+
+      <ul>
+      <% @autoart.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+        <%= f.label :title %><br>
+        <%= f.text_field :title %>
+      </div>
+      <div class="field">
+        <%= f.label :description %><br>
+        <%= f.text_area :description %>
+      </div>
+
+       <div class="form-group">
+        <%= f.label :image %><br>
+        <%= f.file_field :image, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= f.submit "Create Post", class: "btn btn-primary"%>
+      </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

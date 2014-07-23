@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @autoart.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @autoart.description %>
+</p>
+<div class="row">
+	<div class="panel-heading center">
+	<div class ="col-md-offset-2 col-md-8 ">
+		<div class="thumbnail">
+			<%= image_tag @autoart.image.url %>	
+			 <div class="panel-body">
+			 	<p><strong><%= @autoart.title %></strong></p>
+			 	<p><strong><%= @autoart.description %></strong></p>
+			 	<p><%= @autoart.user.username %></p>
+			 </div>
+		</div>
+	</div>
+	</div>
+</div>
+
+<%= link_to 'Edit', edit_autoart_path(@autoart) %> |
+<%= link_to 'Back', autoarts_path %>

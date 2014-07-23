@@ -1,0 +1,40 @@
+<h1>Listing autoarts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @autoarts.each do |autoart| %>
+      <tr>
+        <td><%= autoart.title %></td>
+        <td><%= autoart.description %></td>
+        <td><%= link_to 'Show', autoart %></td>
+        <td><%= link_to 'Edit', edit_autoart_path(autoart) %></td>
+        <td><%= link_to 'Destroy', autoart, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<div class="center">
+  <div class="row">
+    <% @autoarts.each do |post| %>
+      <div class="col-md-3">
+        <div class="thumbnail">
+          <%= link_to image_tag(autoart.image.url), post %>
+            <h3><%= autoart.title %></h3>
+            <p><%= autoart.user.username %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<br>
+
+<%= link_to 'New Autoart', new_autoart_path %>
